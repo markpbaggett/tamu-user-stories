@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="prev" title="Not All Files are a Canvas" href="1003-not-all-files-are-canvases.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="prev" title="Not All Files are a Canvas" href="../modelling/1003-not-all-files-are-canvases.html" />
 
     <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
-        <title>Title - TAMU Digital Collections User Stories documentation</title>
+        <title>IIIF Presentation 3 - TAMU Digital Collections User Stories documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
@@ -198,19 +198,28 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">User Stories</span></p>
+  <p class="caption" role="heading"><span class="caption-text">Systems and Architecture</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/0000-upgrade-to-fedora6.html">Install Fedora 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/0001-add-solr.html">Solrize Fedora 6 Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/0002-add-a-triplestore.html">Add a Triplestore</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Import and Update</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../import_and_update/0003-batch-ingest.html">Batch Ingest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_and_update/0004-batch-update.html">Batch Update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_and_update/0005-batch-delete.html">Batch Delete</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Content Modelling</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modelling/1000-what-am-i.html">File Types and Work Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modelling/1001-allow-filesets.html">Allow Filesets in Works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modelling/1002-collections-can-have.html">Collections can Contain Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modelling/1003-not-all-files-are-canvases.html">Not All Files are a Canvas</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Interoperability</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="0000-upgrade-to-fedora6.html">Install Fedora 6</a></li>
-<li class="toctree-l1"><a class="reference internal" href="0001-add-solr.html">Solrize Fedora 6 Content</a></li>
-<li class="toctree-l1"><a class="reference internal" href="0002-add-a-triplestore.html">Add a Triplestore</a></li>
-<li class="toctree-l1"><a class="reference internal" href="0003-batch-ingest.html">Batch Ingest</a></li>
-<li class="toctree-l1"><a class="reference internal" href="0004-batch-update.html">Batch Update</a></li>
-<li class="toctree-l1"><a class="reference internal" href="0005-batch-delete.html">Batch Delete</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1000-what-am-i.html">File Types and Work Types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1001-allow-filesets.html">Allow Filesets in Works</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1002-collections-can-have.html">Collections can Contain Collections</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1003-not-all-files-are-canvases.html">Not All Files are a Canvas</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Title</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">IIIF Presentation 3</a></li>
 </ul>
 
 </div>
@@ -231,7 +240,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="../_sources/stories/9999_template.rst.txt" title="View this page">
+  <a class="muted-link" href="../_sources/extras/2001_iiif_presentation_3.rst.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -251,22 +260,67 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="title">
-<h1>Title<a class="headerlink" href="#title" title="Link to this heading">¶</a></h1>
+          <section id="iiif-presentation-3">
+<h1>IIIF Presentation 3<a class="headerlink" href="#iiif-presentation-3" title="Link to this heading">¶</a></h1>
 <section id="description">
 <h2>Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h2>
+<p>Currently, the Libraries has a IIIF presentation v2 service as part of <a class="reference external" href="https://github.com/TAMULib/IRIIIFService">irIIIFService</a>.
+This service creates v2 manifests and sometimes v2 collections. With presentation v3, many new features were added to the
+API giving us control over how an item appears in a IIIF viewer or external to the digital collection.</p>
 </section>
 <section id="request">
 <h2>Request<a class="headerlink" href="#request" title="Link to this heading">¶</a></h2>
+<p>irIIIFService is either updated to support presenation v3 or a new service is created.</p>
 </section>
 <section id="acceptance-criteria">
 <h2>Acceptance Criteria<a class="headerlink" href="#acceptance-criteria" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Every work is represented by a v3 manifest.</p></li>
+<li><p>Every collection is represented by a v3 collection with references to its manifests.</p></li>
+<li><p>Files that should be painted on a canvas are.</p></li>
+<li><p>Files that should supplement a canvas are.</p></li>
+<li><p>Files that should be apart of the rendering property are.</p></li>
+<li><p>Files that should be apart of a seeAlso property are.</p></li>
+<li><p>A homepage property links back to the original resource in its collection.</p></li>
+<li><p>A multi-canvased work can have a <code class="code docutils literal notranslate"><span class="pre">paged</span></code> behavior.</p></li>
+<li><p>Each canvas should have a thumbnail property to speed up load in a IIIF viewer.</p></li>
+<li><p>If ranges exist, they should be structured in the manifest.</p></li>
+</ul>
 </section>
 <section id="notes-or-examples">
 <h2>Notes or Examples<a class="headerlink" href="#notes-or-examples" title="Link to this heading">¶</a></h2>
+<p><a class="reference external" href="https://markpbaggett.github.io/static_iiif/manifests/service_maps_demo/service_maps_0069.json">Map History of the 1st Armored Division</a>
+is a two canvas service map in Fedora.</p>
+<p><a class="reference external" href="https://markpbaggett.github.io/static_iiif/manifests/brainstorming/london_maps_11.json">Cary’s survey of the high roads from London to Hampton Court …</a>
+is a book and has been <code class="code docutils literal notranslate"><span class="pre">paged</span></code>. Its geospatial dataset is part of the <code class="code docutils literal notranslate"><span class="pre">rendering</span></code> property in the manifest.</p>
+<p><a class="reference external" href="https://markpbaggett.github.io/static_iiif/manifests/tests/cherokee-freedmen-with-ranges.json">Albert, Henry, et al, R-421 1901, 1905</a>
+is a folder with many pages. Each page has descriptive metadata.  It also has ranges that help users navigate the manifest
+and its various parts. For example, a <code class="code docutils literal notranslate"><span class="pre">pcdmworks:FileSet</span></code> with a corresponding <code class="code docutils literal notranslate"><span class="pre">pcdmworks:Range</span></code> would take
+the label of the Range and target the canvas that includes the FileSet:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://markpbaggett.github.io/static_iiif/manifests/tests/cherokee-freedmen-with-ranges/range/2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Range&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;en&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;Envelope containing the documents for the denied Cherokee Freedmen case of Henry Albert et al.&quot;</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://markpbaggett.github.io/static_iiif/manifests/tests/cherokee-freedmen-with-ranges/canvas/2/0&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Canvas&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+</pre></div>
+</div>
 </section>
 <section id="related-requests">
 <h2>Related Requests<a class="headerlink" href="#related-requests" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li></li>
+</ul>
 </section>
 </section>
 
@@ -276,7 +330,7 @@
         
         <div class="related-pages">
           
-          <a class="prev-page" href="1003-not-all-files-are-canvases.html">
+          <a class="prev-page" href="../modelling/1003-not-all-files-are-canvases.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
@@ -317,7 +371,7 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Title</a><ul>
+<li><a class="reference internal" href="#">IIIF Presentation 3</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#request">Request</a></li>
 <li><a class="reference internal" href="#acceptance-criteria">Acceptance Criteria</a></li>

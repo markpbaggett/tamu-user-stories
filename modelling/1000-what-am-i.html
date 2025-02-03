@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Batch Delete" href="0005-batch-delete.html" /><link rel="prev" title="Batch Ingest" href="0003-batch-ingest.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Allow Filesets in Works" href="1001-allow-filesets.html" /><link rel="prev" title="Batch Delete" href="../import_and_update/0005-batch-delete.html" />
 
     <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
-        <title>Batch Update - TAMU Digital Collections User Stories documentation</title>
+        <title>File Types and Work Types - TAMU Digital Collections User Stories documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
@@ -198,19 +198,28 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">User Stories</span></p>
+  <p class="caption" role="heading"><span class="caption-text">Systems and Architecture</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/0000-upgrade-to-fedora6.html">Install Fedora 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/0001-add-solr.html">Solrize Fedora 6 Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/0002-add-a-triplestore.html">Add a Triplestore</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Import and Update</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../import_and_update/0003-batch-ingest.html">Batch Ingest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_and_update/0004-batch-update.html">Batch Update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_and_update/0005-batch-delete.html">Batch Delete</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Content Modelling</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="0000-upgrade-to-fedora6.html">Install Fedora 6</a></li>
-<li class="toctree-l1"><a class="reference internal" href="0001-add-solr.html">Solrize Fedora 6 Content</a></li>
-<li class="toctree-l1"><a class="reference internal" href="0002-add-a-triplestore.html">Add a Triplestore</a></li>
-<li class="toctree-l1"><a class="reference internal" href="0003-batch-ingest.html">Batch Ingest</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Batch Update</a></li>
-<li class="toctree-l1"><a class="reference internal" href="0005-batch-delete.html">Batch Delete</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1000-what-am-i.html">File Types and Work Types</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">File Types and Work Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1001-allow-filesets.html">Allow Filesets in Works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1002-collections-can-have.html">Collections can Contain Collections</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1003-not-all-files-are-canvases.html">Not All Files are a Canvas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="9999_template.html">Title</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Interoperability</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../extras/2001_iiif_presentation_3.html">IIIF Presentation 3</a></li>
 </ul>
 
 </div>
@@ -231,7 +240,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="../_sources/stories/0004-batch-update.rst.txt" title="View this page">
+  <a class="muted-link" href="../_sources/modelling/1000-what-am-i.rst.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -251,29 +260,27 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="batch-update">
-<h1>Batch Update<a class="headerlink" href="#batch-update" title="Link to this heading">¶</a></h1>
+          <section id="file-types-and-work-types">
+<h1>File Types and Work Types<a class="headerlink" href="#file-types-and-work-types" title="Link to this heading">¶</a></h1>
 <section id="description">
 <h2>Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h2>
-<p>Librarians need a way to batch update metadata and files.</p>
+<p>Not all files or works are the same. Librarians need to be able to state what a work is and have that work receive different
+treatment in terms of interoperability. This could mean the ability to upload a GIS data set to a work that goes with images
+but not have it be treated as a canvas.  Instead, it becomes a downloadable binary from the parent resource.</p>
 </section>
 <section id="request">
 <h2>Request<a class="headerlink" href="#request" title="Link to this heading">¶</a></h2>
-<p>I want to be able to pass a spreadsheet and have it either update and existing item or create it from scratch.</p>
+<p>I want to be able to state what a file or work is so that it is treated differently in interoperable systems.</p>
 </section>
 <section id="acceptance-criteria">
 <h2>Acceptance Criteria<a class="headerlink" href="#acceptance-criteria" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>Relationships are editable</p></li>
-<li><p>Can add new item to collection</p></li>
-<li><p>Can attach new file to item</p></li>
-<li><p>Can modify metadata about an item or file</p></li>
+<li><p>A controlled set of work types are prescribed unless determined to be unneeded or unnecessary by developers.</p></li>
+<li><p>A controlled set of files types are adopted and those are setable by librarians on ingest.</p></li>
 </ul>
 </section>
 <section id="notes-or-examples">
 <h2>Notes or Examples<a class="headerlink" href="#notes-or-examples" title="Link to this heading">¶</a></h2>
-<p>Here is a sample CSV from my old institution for how this might look.  Notice columns for model, sequence, and rdf_type.</p>
-<p><a class="reference external" href="https://docs.google.com/spreadsheets/d/1kUv3FmhgJM-4ggvrWbME4YMISwkADF-wIWW_-c_8Boc/edit?usp=sharing">Sample Sheet</a></p>
 </section>
 <section id="related-requests">
 <h2>Related Requests<a class="headerlink" href="#related-requests" title="Link to this heading">¶</a></h2>
@@ -285,23 +292,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="0005-batch-delete.html">
+          <a class="next-page" href="1001-allow-filesets.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Batch Delete</div>
+                <div class="title">Allow Filesets in Works</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="0003-batch-ingest.html">
+          <a class="prev-page" href="../import_and_update/0005-batch-delete.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Batch Ingest</div>
+                <div class="title">Batch Delete</div>
                 
               </div>
             </a>
@@ -335,7 +342,7 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Batch Update</a><ul>
+<li><a class="reference internal" href="#">File Types and Work Types</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#request">Request</a></li>
 <li><a class="reference internal" href="#acceptance-criteria">Acceptance Criteria</a></li>

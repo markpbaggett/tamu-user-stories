@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Not All Files are a Canvas" href="1003-not-all-files-are-canvases.html" /><link rel="prev" title="Allow Filesets in Works" href="1001-allow-filesets.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="IIIF Presentation 3" href="../extras/2001_iiif_presentation_3.html" /><link rel="prev" title="Collections can Contain Collections" href="1002-collections-can-have.html" />
 
     <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
-        <title>Collections can Contain Collections - TAMU Digital Collections User Stories documentation</title>
+        <title>Not All Files are a Canvas - TAMU Digital Collections User Stories documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
@@ -198,19 +198,28 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">User Stories</span></p>
+  <p class="caption" role="heading"><span class="caption-text">Systems and Architecture</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/0000-upgrade-to-fedora6.html">Install Fedora 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/0001-add-solr.html">Solrize Fedora 6 Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/0002-add-a-triplestore.html">Add a Triplestore</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Import and Update</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../import_and_update/0003-batch-ingest.html">Batch Ingest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_and_update/0004-batch-update.html">Batch Update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_and_update/0005-batch-delete.html">Batch Delete</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Content Modelling</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="0000-upgrade-to-fedora6.html">Install Fedora 6</a></li>
-<li class="toctree-l1"><a class="reference internal" href="0001-add-solr.html">Solrize Fedora 6 Content</a></li>
-<li class="toctree-l1"><a class="reference internal" href="0002-add-a-triplestore.html">Add a Triplestore</a></li>
-<li class="toctree-l1"><a class="reference internal" href="0003-batch-ingest.html">Batch Ingest</a></li>
-<li class="toctree-l1"><a class="reference internal" href="0004-batch-update.html">Batch Update</a></li>
-<li class="toctree-l1"><a class="reference internal" href="0005-batch-delete.html">Batch Delete</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1000-what-am-i.html">File Types and Work Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1001-allow-filesets.html">Allow Filesets in Works</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Collections can Contain Collections</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1003-not-all-files-are-canvases.html">Not All Files are a Canvas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="9999_template.html">Title</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1002-collections-can-have.html">Collections can Contain Collections</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Not All Files are a Canvas</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Interoperability</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../extras/2001_iiif_presentation_3.html">IIIF Presentation 3</a></li>
 </ul>
 
 </div>
@@ -231,7 +240,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="../_sources/stories/1002-collections-can-have.rst.txt" title="View this page">
+  <a class="muted-link" href="../_sources/modelling/1003-not-all-files-are-canvases.rst.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -251,24 +260,65 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="collections-can-contain-collections">
-<h1>Collections can Contain Collections<a class="headerlink" href="#collections-can-contain-collections" title="Link to this heading">¶</a></h1>
+          <section id="not-all-files-are-a-canvas">
+<h1>Not All Files are a Canvas<a class="headerlink" href="#not-all-files-are-a-canvas" title="Link to this heading">¶</a></h1>
 <section id="description">
 <h2>Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h2>
-<p>A collection should be able to contain collections or works or both.</p>
+<p>Works may have be files that serve other purposes than being painted and tiled in a viewer. They may be for download, to
+supplement the file as a transcript, or to supplement a file as structured text (ALTO / HOCR). They may also may be
+included so that they can be found and downloaded from a IIIF Mirador viewer through a rendering property.</p>
 </section>
 <section id="request">
 <h2>Request<a class="headerlink" href="#request" title="Link to this heading">¶</a></h2>
-<p>I want to be able to ingest a collection into a collection.</p>
+<p>I want to be able to state what a file is and have it be treated accordingly.</p>
 </section>
 <section id="acceptance-criteria">
 <h2>Acceptance Criteria<a class="headerlink" href="#acceptance-criteria" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>I am able to ingest a colleciton into another collection and have that interoperable.</p></li>
+<li><p>The ability to state whether a file is a canvas that should painted in a viewer and store that in Fedora.</p></li>
+<li><p>The ability to state whether a file supplements another file and should supplement a canvas and if so how and store that in Fedora.</p></li>
+<li><p>The ability to state whether a file is not related to a canvas but instead should be shared via a <cite>rendering</cite> or <cite>seeAlso</cite> property in a IIIF manifest and store that in Fedora.</p></li>
 </ul>
 </section>
 <section id="notes-or-examples">
 <h2>Notes or Examples<a class="headerlink" href="#notes-or-examples" title="Link to this heading">¶</a></h2>
+<p>Example File types were defined in the Fall in <a class="reference external" href="https://tamu-cookbook.readthedocs.io/en/latest/components/0000_file_types.html#">File: Subtypes and Use Cases</a>.</p>
+<p>The IIIF Presentation API describes the <a class="reference external" href="https://iiif.io/api/presentation/3.0/#rendering">rendering property</a> as an
+alternative, non-IIIF representation of the resource. This property would be used for a PDF representation of a book or
+perhaps a Geospatial dataset related to an image file.</p>
+<p>The Presentation API defines the <a class="reference external" href="https://iiif.io/api/presentation/3.0/#seealso">seeAlso property</a> as a machine readable
+resource that is related to the current resource. This could be used for a variety of use cases including additional metadata
+formats beyond what exists in the RDF properties on a work.</p>
+<p>Examples of how file type might be understood is via the <cite>rdf:type</cite> of a file in Fedora is described in detail at
+<a class="reference external" href="https://tamu-cookbook.readthedocs.io/en/latest/components/0000_file_types.html#">File: Subtypes and Use Cases</a>. An
+example of a Geospatial Dataset might be something like:</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">ex:</span><span class="w"> </span><span class="nv">&lt;http://example.org/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">fedora:</span><span class="w"> </span><span class="nv">&lt;http://fedora.info/definitions/v4/repository#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">pcdm:</span><span class="w"> </span><span class="nv">&lt;http://pcdm.org/models#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">pcdmff:</span><span class="w"> </span><span class="nv">&lt;http://pcdm.org/file-format-types#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">pcdmuse:</span><span class="w"> </span><span class="nv">&lt;http://pcdm.org/use#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">nepomuk:</span><span class="w"> </span><span class="nv">&lt;http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">exif:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2003/12/exif/ns#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">ebucore:</span><span class="w"> </span><span class="nv">&lt;http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">premis:</span><span class="w"> </span><span class="nv">&lt;http://www.loc.gov/premis/rdf/v1#&gt;</span><span class="w"> </span><span class="p">.</span>
+
+<span class="nn">ex</span><span class="p">:</span><span class="nt">Dataset</span> <span class="kt">a</span> <span class="nn">pcdmff</span><span class="p">:</span><span class="nt">Dataset</span><span class="p">;</span>
+    <span class="nn">pcdm</span><span class="p">:</span><span class="nt">fileOf</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">ImageWork</span> <span class="p">;</span>
+    <span class="nn">fedora</span><span class="p">:</span><span class="nt">hasBinary</span> <span class="nv">&lt;https://path/to/preservation%20file.zip&gt;</span> <span class="p">.</span>
+    <span class="nn">ebucore</span><span class="p">:</span><span class="nt">fileSize</span> <span class="s">&quot;17765536&quot;</span><span class="o">^^</span><span class="ge">&lt;http://www.w3.org/2001/XMLSchema#string&gt;</span> <span class="p">;</span>
+    <span class="nn">premis</span><span class="p">:</span><span class="nt">hasSize</span> <span class="s">&quot;17765536&quot;</span><span class="o">^^</span><span class="ge">&lt;http://www.w3.org/2001/XMLSchema#long&gt;</span> <span class="p">;</span>
+    <span class="nn">ebucore</span><span class="p">:</span><span class="nt">hasMimeType</span> <span class="s">&quot;application/zip&quot;</span><span class="o">^^</span><span class="ge">&lt;http://www.w3.org/2001/XMLSchema#string&gt;</span> <span class="p">;</span>
+    <span class="nn">nepomuk</span><span class="p">:</span><span class="nt">hashValue</span> <span class="s">&quot;99d14ee8c28517e10c637e0e0a675b94&quot;</span><span class="o">^^</span><span class="ge">&lt;http://www.w3.org/2001/XMLSchema#string&gt;</span> <span class="p">;</span>
+    <span class="nn">ebucore</span><span class="p">:</span><span class="nt">filename</span> <span class="s">&quot;georeferenced_CML_London_3736648_Carys.zip&quot;</span><span class="o">^^</span><span class="ge">&lt;http://www.w3.org/2001/XMLSchema#string&gt;</span> <span class="p">.</span>
+</pre></div>
+</div>
+<p>Examples of how these might be cross-walked to IIIF Presentation can be seen below:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https%3A%2F%2Fmarkpbaggett.github.io%2Fstatic_iiif%2Fmanifests%2Fbrainstorming%2Flondon_maps_11.json">Cary’s survey of the high roads from London to Hampton Court …</a> from the London Maps collection with a Geospatial Dataset via the rendering prop in Clover.</p></li>
+<li><p><a class="reference external" href="https://projectmirador.org/embed/?iiif-content=https://markpbaggett.github.io/static_iiif/manifests/brainstorming/london_maps_11.json">Cary’s survey of the high roads from London to Hampton Court …</a> from the London Maps collection with a Geospatial Dataset via the rendering prop in Mirador.</p></li>
+<li><p><a class="reference external" href="https://theseus-viewer.netlify.app/?iiif-content=https://markpbaggett.github.io/static_iiif/manifests/brainstorming/london_maps_11.json">Cary’s survey of the high roads from London to Hampton Court …</a> from the London Maps collection with a Geospatial Dataset via the rendering prop in Theseus.</p></li>
+</ul>
 </section>
 <section id="related-requests">
 <h2>Related Requests<a class="headerlink" href="#related-requests" title="Link to this heading">¶</a></h2>
@@ -280,23 +330,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="1003-not-all-files-are-canvases.html">
+          <a class="next-page" href="../extras/2001_iiif_presentation_3.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Not All Files are a Canvas</div>
+                <div class="title">IIIF Presentation 3</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="1001-allow-filesets.html">
+          <a class="prev-page" href="1002-collections-can-have.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Allow Filesets in Works</div>
+                <div class="title">Collections can Contain Collections</div>
                 
               </div>
             </a>
@@ -330,7 +380,7 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Collections can Contain Collections</a><ul>
+<li><a class="reference internal" href="#">Not All Files are a Canvas</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#request">Request</a></li>
 <li><a class="reference internal" href="#acceptance-criteria">Acceptance Criteria</a></li>
