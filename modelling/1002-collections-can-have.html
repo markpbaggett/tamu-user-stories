@@ -265,23 +265,56 @@
 <h1>Collections can Contain Collections<a class="headerlink" href="#collections-can-contain-collections" title="Link to this heading">¶</a></h1>
 <section id="description">
 <h2>Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h2>
-<p>A collection should be able to contain collections or works or both.</p>
+<p>A <code class="code docutils literal notranslate"><span class="pre">pcdm:Collection</span></code> should be able to contain: other collections, works, or both. This will ensure that our IIIF
+presentation service can accurately generate a IIIF Presentation Collection resource that references its manifests and
+collections.</p>
 </section>
 <section id="request">
 <h2>Request<a class="headerlink" href="#request" title="Link to this heading">¶</a></h2>
-<p>I want to be able to ingest a collection into a collection.</p>
+<p>I want to be able to model a collection in another collection in the repository.</p>
 </section>
 <section id="acceptance-criteria">
 <h2>Acceptance Criteria<a class="headerlink" href="#acceptance-criteria" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>I am able to ingest a colleciton into another collection and have that interoperable.</p></li>
+<li><p>I am able to model a collection in another collection and have it interoperable with other services.</p></li>
 </ul>
 </section>
 <section id="notes-or-examples">
 <h2>Notes or Examples<a class="headerlink" href="#notes-or-examples" title="Link to this heading">¶</a></h2>
+<p>A <code class="code docutils literal notranslate"><span class="pre">pcdm:Collection</span></code> is not a <code class="code docutils literal notranslate"><span class="pre">pcdm:Object</span></code>. It is an instance of <code class="code docutils literal notranslate"><span class="pre">ore:Aggregation</span></code> and might look
+something like this:</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">ex:</span><span class="w"> </span><span class="nv">&lt;http://example.org/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">pcdm:</span><span class="w"> </span><span class="nv">&lt;http://pcdm.org/models#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">dc:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/elements/1.1/&gt;</span><span class="w"> </span><span class="p">.</span>
+
+<span class="nn">ex</span><span class="p">:</span><span class="nt">Collection</span> <span class="kt">a</span> <span class="nn">pcdm</span><span class="p">:</span><span class="nt">Collection</span> <span class="p">;</span>
+    <span class="nn">dc</span><span class="p">:</span><span class="nt">title</span> <span class="s">&quot;My Image Collection&quot;</span> <span class="p">;</span>
+    <span class="nn">pcdm</span><span class="p">:</span><span class="nt">hasMember</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">ImageOne</span><span class="p">,</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">ImageTwo</span><span class="p">,</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">ImageThree</span><span class="p">,</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">ImageFour</span> <span class="p">.</span>
+</pre></div>
+</div>
+<p>A Collection MUST:</p>
+<ul class="simple">
+<li><p>be an instance of <code class="code docutils literal notranslate"><span class="pre">pcdm:Collection</span></code> via the <code class="code docutils literal notranslate"><span class="pre">rdf:type</span></code> property.</p></li>
+<li><p>be related to parent Collections or child works via <code class="code docutils literal notranslate"><span class="pre">pcdm:memberOf</span></code> or <code class="code docutils literal notranslate"><span class="pre">pcdm:hasMember</span></code> properties.</p></li>
+<li><p>have mandatory descriptive elements as stated by Metadata Guidelines for Digital Resources at Texas A&amp;M University Libraries</p></li>
+</ul>
+<p>A Collection MAY:</p>
+<ul class="simple">
+<li><p>have other descriptive metadata properties.</p></li>
+<li><p>have many objects or filesets.</p></li>
+<li><p>have proxies if the works in the collection require order.</p></li>
+</ul>
+<p>A Collection MUST NOT:</p>
+<ul class="simple">
+<li><p>contain child files directly.</p></li>
+</ul>
+<p>More information may be found in <a class="reference external" href="https://tamu-cookbook.readthedocs.io/en/latest/components/0005_collection.html">Colleciton</a></p>
 </section>
 <section id="related-requests">
 <h2>Related Requests<a class="headerlink" href="#related-requests" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><span class="xref std std-doc">extras/2001_iiif_presentation_3</span></p></li>
+</ul>
 </section>
 </section>
 

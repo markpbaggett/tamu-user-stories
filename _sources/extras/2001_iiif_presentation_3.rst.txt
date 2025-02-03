@@ -21,7 +21,7 @@ Acceptance Criteria
 -------------------
 
 * Every work is represented by a v3 manifest.
-* Every collection is represented by a v3 collection with references to its manifests.
+* Every collection is represented by a v3 collection with references to its manifests and collections.
 * Files that should be painted on a canvas are.
 * Files that should supplement a canvas are.
 * Files that should be apart of the rendering property are.
