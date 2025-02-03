@@ -74,3 +74,5 @@ Examples of how these might be cross-walked to IIIF Presentation can be seen bel
 Related Requests
 ----------------
 
+* :doc:`extras/2001_iiif_presentation_3`
+
