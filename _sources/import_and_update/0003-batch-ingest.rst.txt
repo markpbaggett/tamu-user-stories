@@ -12,16 +12,16 @@ Librarians need a way to batch ingest data.
 Request
 -------
 
-I want to be able to batch ingest or import a collection with metadata in a csv.
+I want to be able to batch ingest or import a collection with metadata via a csv.
 
 -------------------
 Acceptance Criteria
 -------------------
 
-* Create a collection via import
-* Create a work via import
-* Create a fileset or files via import
-* Establish relationships via import
+* Ability to create a collection via import
+* Ability to create a work via import
+* Ability to create a fileset or files via import
+* Ability to establish relationships via import
 
 
 -----------------
