@@ -6,6 +6,7 @@
 TAMU Digital Collections User Stories
 =====================================
 
+This portal captures user stories for various needs related to digital collections in digital initiatives.
 
 .. toctree::
    :maxdepth: 1
