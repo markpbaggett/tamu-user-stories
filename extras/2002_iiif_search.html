@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Solrize Fedora 6 Content" href="0001-add-solr.html" /><link rel="prev" title="TAMU Digital Collections User Stories" href="../index.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="prev" title="IIIF Presentation 3" href="2001_iiif_presentation_3.html" />
 
     <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
-        <title>Install Fedora 6 - TAMU Digital Collections User Stories documentation</title>
+        <title>IIIF Search - TAMU Digital Collections User Stories documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
@@ -199,10 +199,10 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Systems and Architecture</span></p>
-<ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Install Fedora 6</a></li>
-<li class="toctree-l1"><a class="reference internal" href="0001-add-solr.html">Solrize Fedora 6 Content</a></li>
-<li class="toctree-l1"><a class="reference internal" href="0002-add-a-triplestore.html">Add a Triplestore</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/0000-upgrade-to-fedora6.html">Install Fedora 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/0001-add-solr.html">Solrize Fedora 6 Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/0002-add-a-triplestore.html">Add a Triplestore</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Import and Update</span></p>
 <ul>
@@ -219,9 +219,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../modelling/1004-works-may-have-ranges.html">Works May Have Ranges</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Interoperability</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../extras/2001_iiif_presentation_3.html">IIIF Presentation 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../extras/2002_iiif_search.html">IIIF Search</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="2001_iiif_presentation_3.html">IIIF Presentation 3</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">IIIF Search</a></li>
 </ul>
 
 </div>
@@ -242,7 +242,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="../_sources/architecture/0000-upgrade-to-fedora6.rst.txt" title="View this page">
+  <a class="muted-link" href="../_sources/extras/2002_iiif_search.rst.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -262,33 +262,46 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="install-fedora-6">
-<h1>Install Fedora 6<a class="headerlink" href="#install-fedora-6" title="Link to this heading">¶</a></h1>
+          <section id="iiif-search">
+<h1>IIIF Search<a class="headerlink" href="#iiif-search" title="Link to this heading">¶</a></h1>
 <section id="description">
 <h2>Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h2>
-<p>For several years, we’ve used Fedora 4 with a locally adopted model for collections, files and works. This organization
-isn’t necessarily what we want to keep moving forward. Additionally, we had some trouble migrating from Fedora 4 to Fedora 6.
-Because our current Fedora instance is relatively small, we should just move to Fedora 6 then migrate our works individually.</p>
+<p>Currently, Fedora is only used images and textual works where we don’t care about search within text. When we care about
+search within text, we use either <a class="reference external" href="https://github.com/open-oni/open-oni">OpenOni</a> or
+<a class="reference external" href="https://github.com/TAMULib/tl_docker/tree/master/apache_php8-bookreader">InternetArchive Bookreader</a> to deliver collections.
+This is problematic for a few reasons:</p>
+<ol class="arabic simple">
+<li><p>you can’t reuse one of these works in an exhibit</p></li>
+<li><p>we aren’t managing these files or works in our repository</p></li>
+<li><p>the works aren’t represented by a IIIF manifest to encourage remix or reuse of the work</p></li>
+<li><p>we have to maintain those other products</p></li>
+<li><p>some of our collections don’t fit nicely in those other applications</p></li>
+</ol>
+<p>We could eliminate the need for these repositories and bring in the same search behavior to Fedora by adopting
+<a class="reference external" href="https://iiif.io/api/search/2.0/">IIIF Content Search</a>.</p>
 </section>
 <section id="request">
 <h2>Request<a class="headerlink" href="#request" title="Link to this heading">¶</a></h2>
-<p>Install Fedora 6 for use.</p>
+<ul class="simple">
+<li><p>A IIIF Content Search is created that allows structured text about an image to be indexed in Solr and available via a IIIF Content Search Service.</p></li>
+</ul>
 </section>
 <section id="acceptance-criteria">
 <h2>Acceptance Criteria<a class="headerlink" href="#acceptance-criteria" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>Fedora 6 is installed.</p></li>
-<li><p>Minimal microservices are setup and interoperable.</p></li>
-<li><p>CRUD is possible via REST APIs.</p></li>
+<li><p>A IIIF Content Search Service is adopted or created.</p></li>
+<li><p>Structured Text is storeable in Fedora and indexed in Solr and fed to the IIIF content search service.</p></li>
 </ul>
 </section>
 <section id="notes-or-examples">
 <h2>Notes or Examples<a class="headerlink" href="#notes-or-examples" title="Link to this heading">¶</a></h2>
-<p><a class="reference external" href="https://wiki.lyrasis.org/display/FEDORA6x/Fedora+6.x+Documentation">Fedora 6 documentation</a> is available online.</p>
+<p>There are several IIIF Content Search Services in use.  Blacklight has one that works out of the box. IIIF Simple Annotation
+Server also has its own.  Archipelago has its own modules that do this.</p>
+<p>While we probably don’t want to adopt any of these, a <a class="reference external" href="https://github.com/dbmdz/solr-ocrhighlighting/">popular SOLR plugin</a>
+is used by most of these to simplify some of the most complex parts.</p>
 </section>
 <section id="related-requests">
 <h2>Related Requests<a class="headerlink" href="#related-requests" title="Link to this heading">¶</a></h2>
-<p>N/A</p>
 </section>
 </section>
 
@@ -297,23 +310,15 @@ Because our current Fedora instance is relatively small, we should just move to 
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="0001-add-solr.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Solrize Fedora 6 Content</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="../index.html">
+          
+          <a class="prev-page" href="2001_iiif_presentation_3.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Home</div>
+                <div class="title">IIIF Presentation 3</div>
                 
               </div>
             </a>
@@ -347,7 +352,7 @@ Because our current Fedora instance is relatively small, we should just move to 
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Install Fedora 6</a><ul>
+<li><a class="reference internal" href="#">IIIF Search</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#request">Request</a></li>
 <li><a class="reference internal" href="#acceptance-criteria">Acceptance Criteria</a></li>
