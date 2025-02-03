@@ -14,7 +14,7 @@ API giving us control over how an item appears in a IIIF viewer or external to t
 Request
 -------
 
-irIIIFService is either updated to support presenation v3 or a new service is created.
+`irIIIFService <https://github.com/tamulib/irIIIFService>`_ is either updated to support presenation v3 or a new service is created.
 
 -------------------
 Acceptance Criteria
