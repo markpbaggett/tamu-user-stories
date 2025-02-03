@@ -265,13 +265,16 @@
 <h1>File Types and Work Types<a class="headerlink" href="#file-types-and-work-types" title="Link to this heading">¶</a></h1>
 <section id="description">
 <h2>Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h2>
-<p>Not all files or works are the same. Librarians need to be able to state what a work is and have that work receive different
-treatment in terms of interoperability. This could mean the ability to upload a GIS data set to a work that goes with images
-but not have it be treated as a canvas.  Instead, it becomes a downloadable binary from the parent resource.</p>
+<p>Not all files or works are the same, and librarians need the ability to define the nature of a work so that it receives
+appropriate treatment in terms of interoperability. For example, a GIS dataset associated with a work that includes
+images should not be treated as a canvas. Instead, it should function as a downloadable binary file linked to the parent
+resource. In order to do this, the most straightforward way seems to be allowing type to be stated via <code class="code docutils literal notranslate"><span class="pre">rdf:type</span></code>
+in Fedora.</p>
 </section>
 <section id="request">
 <h2>Request<a class="headerlink" href="#request" title="Link to this heading">¶</a></h2>
-<p>I want to be able to state what a file or work is so that it is treated differently in interoperable systems.</p>
+<p>I want to be able to state the Object that a file or work is an instance of so that it cnd be
+treated differently in interoperable systems like IIIF presentation.</p>
 </section>
 <section id="acceptance-criteria">
 <h2>Acceptance Criteria<a class="headerlink" href="#acceptance-criteria" title="Link to this heading">¶</a></h2>
@@ -282,6 +285,13 @@ but not have it be treated as a canvas.  Instead, it becomes a downloadable bina
 </section>
 <section id="notes-or-examples">
 <h2>Notes or Examples<a class="headerlink" href="#notes-or-examples" title="Link to this heading">¶</a></h2>
+<p><a class="reference external" href="https://tamu-cookbook.readthedocs.io/en/latest/components/0000_file_types.html">An initial document</a>
+was created to define file types in Fedora.  This list is derived from <a class="reference external" href="https://pcdm.org/2015/10/14/file-format-types">PCDM File Formats</a>.</p>
+<p>If deemed necessary, a similar list could be created for works.  This does not exist
+as part of PCDM. At my previous institution, we created a <a class="reference external" href="https://ontology.lib.utk.edu/works">Files and Works Ontology</a>
+that inherited from PCDM to define various work types. These work types were stored
+in a prescribed way in Fedora and had related Models in the code base surrounding our
+repository that treated the work types in different ways.</p>
 </section>
 <section id="related-requests">
 <h2>Related Requests<a class="headerlink" href="#related-requests" title="Link to this heading">¶</a></h2>
