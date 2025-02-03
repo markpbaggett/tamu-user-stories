@@ -24,7 +24,12 @@ Acceptance Criteria
 Notes or Examples
 -----------------
 
+SAGE currently is setup to read data from a Solr endpoint and read in and transform data according to its READERs and WRITERs.
+
+For now, this same expectaiton can be followed but may be revisited in future sprints or requests.
+
 ----------------
 Related Requests
 ----------------
 
+N/A

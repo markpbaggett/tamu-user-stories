@@ -28,7 +28,10 @@ Acceptance Criteria
 Notes or Examples
 -----------------
 
+`Fedora 6 documentation <https://wiki.lyrasis.org/display/FEDORA6x/Fedora+6.x+Documentation>`_ is available online.
+
 ----------------
 Related Requests
 ----------------
 
+N/A

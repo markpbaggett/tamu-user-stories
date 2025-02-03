@@ -9,6 +9,12 @@ Description
 In order to simplify the number of requests needed to find Fedora content, I'd love to have a populated
 triple store.  The triple store could also serve other services and solve complex requests in a much faster way.
 
+--------
+Priority
+--------
+
+**WANT**:  A a want, this is not required and can come later if deemed unnecessary for other interoperability.
+
 -------
 Request
 -------
@@ -66,3 +72,4 @@ Find any works that have an attached HOCR file.
 Related Requests
 ----------------
 
+N/A
